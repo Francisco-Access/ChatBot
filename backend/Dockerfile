@@ -25,6 +25,13 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 
+RUN npm install --save-dev sequelize-cli
+RUN npm i -g sequelize-cli
+RUN npm install -g sequelize
+RUN npm install --save sequelize
+RUN npm install --save sequelize-cli
+# RUN npx sequelize-cli init --force
+
 COPY . .
 RUN npm run build
 
